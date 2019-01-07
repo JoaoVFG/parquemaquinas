@@ -10,34 +10,32 @@ import joaovfg.com.github.repositories.ComputadorRepository;
 
 @Service
 public class ComputadorService {
-	
+
 	@Autowired
 	ComputadorRepository computadorRepository;
-	
+
 	public Computador findById(Integer id) {
 		return computadorRepository.buscaPorId(id);
 	}
-	
+
 	public List<Computador> findAll() {
 		return computadorRepository.findAll();
 	}
-	
+
 	public Computador findByAtivo(Integer ativo) {
-		return computadorRepository.findByativo(ativo);
+		return computadorRepository.buscaPorAtivo(ativo);
 	}
-	
+
 	public Computador createComputador(Computador computador) {
 		computador.setId(null);
 		computador = computadorRepository.save(computador);
 		return computador;
 	}
-	
-	public void deletarPessoa(Integer id) throws Exception {
+
+	public void deletarComputador(Integer id) {
 		findById(id);
-		try {
-			computadorRepository.deleteById(id);
-		} catch (Exception e) {
-			throw new Exception("NAO E POSSIVEL EXCLUIR ESSA PESSOA.");
-		}
+
+		computadorRepository.deleteById(id);
+
 	}
 }

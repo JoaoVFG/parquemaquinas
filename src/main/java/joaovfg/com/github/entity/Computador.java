@@ -24,37 +24,37 @@ public class Computador implements Serializable{
 	
 	private Integer ativo;
 	
-	private String tipo;
+	private String 	tipo;
 	
-	private String isRecepcao;
+	private String 	isRecepcao;
 	
-	private String unidade;
+	private String 	unidade;
 	
-	private String setor;
+	private String 	setor;
 	
-	private String colaborador;
+	private String 	colaborador;
 	
-	private String usaAntiVirus;
+	private String 	usaAntiVirus;
 	
-	private String usaCardio;
+	private String 	usaCardio;
 	
-	private String usaPiramide;
+	private String 	usaPiramide;
 	
-	private String usaQlikView;
+	private String 	usaQlikView;
 	
-	private String fabricante;
+	private String 	fabricante;
 	
-	private String modelo;
+	private String 	modelo;
 	
-	private String processador;
+	private String 	processador;
 	
-	private String ram;
+	private String 	ram;
 	
-	private String hd;
+	private String 	hd;
 	
-	private String sistemaOperacional;
+	private String 	sistemaOperacional;
 	
-	private String office;
+	private String 	office;
 
 	public Computador(Integer id, Integer ativo, String tipo, String isRecepcao, String unidade, String setor,
 			String colaborador, String usaAntiVirus, String usaCardio, String usaPiramide, String usaQlikView,

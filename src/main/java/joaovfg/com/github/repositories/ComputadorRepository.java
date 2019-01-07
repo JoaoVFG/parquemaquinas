@@ -13,6 +13,7 @@ public interface ComputadorRepository extends JpaRepository<Computador, Integer>
 	@Query("SELECT computador FROM Computador computador WHERE computador.id = :id")
 	public Computador buscaPorId(@Param("id") Integer id);
 	
+	public Computador findByativo(Integer ativo);
 	
 
 }

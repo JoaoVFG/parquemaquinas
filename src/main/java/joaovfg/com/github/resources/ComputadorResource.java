@@ -42,6 +42,9 @@ public class ComputadorResource {
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
 	public ResponseEntity<Void> deletaComputador(@PathVariable String id){
+		
+		System.out.println("Teste problema Id" + id);
+		
 		computadorService.deletarComputador(Integer.parseInt(id));
 		return ResponseEntity.noContent().build();
 	}
@@ -52,5 +55,11 @@ public class ComputadorResource {
 		URI uri = URI.create("/computador" + "/busca/id/" + computador.getId());
 		
 		return ResponseEntity.created(uri).body(computador);
+	}
+	
+	@RequestMapping(value="/update", method = RequestMethod.PUT)
+	public ResponseEntity<Computador> updatePessoa(@RequestBody Computador updateComputador){
+		Computador computador = computadorService.updatePessoa(updateComputador);
+		return ResponseEntity.ok(computador);
 	}
 }

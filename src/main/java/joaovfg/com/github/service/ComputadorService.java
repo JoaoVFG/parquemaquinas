@@ -34,8 +34,33 @@ public class ComputadorService {
 
 	public void deletarComputador(Integer id) {
 		findById(id);
-
+		System.out.println("TESTE");
 		computadorRepository.deleteById(id);
 
+	}
+
+	public Computador updatePessoa(Computador updateComputador) {
+		Computador computador = findById(updateComputador.getId());
+		
+		computador.setAtivo(updateComputador.getAtivo());
+		computador.setColaborador(updateComputador.getColaborador());
+		computador.setFabricante(updateComputador.getFabricante());
+		computador.setHd(updateComputador.getHd());
+		computador.setIsRecepcao(updateComputador.getIsRecepcao());
+		computador.setModelo(updateComputador.getModelo());
+		computador.setOffice(updateComputador.getOffice());
+		computador.setProcessador(updateComputador.getProcessador());
+		computador.setRam(updateComputador.getRam());
+		computador.setSetor(updateComputador.getSetor());
+		computador.setSistemaOperacional(updateComputador.getSistemaOperacional());
+		computador.setTipo(updateComputador.getTipo());
+		computador.setUnidade(updateComputador.getUnidade());
+		computador.setUsaAntiVirus(updateComputador.getUsaAntiVirus());
+		computador.setUsaCardio(updateComputador.getUsaCardio());
+		computador.setUsaPiramide(updateComputador.getUsaPiramide());
+		computador.setUsaQlikView(updateComputador.getUsaQlikView());
+		
+		
+		return computadorRepository.save(computador);
 	}
 }
